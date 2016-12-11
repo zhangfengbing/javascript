@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            list-style: none;
+            width:100px;
+            height:100px;
+            background: url(images/active.jpg);
+            float:left;
+            margin-right:20px;
+        }
+    </style>
+</head>
+<body>
+<li ></li>
+<li ></li>
+<li></li>
+<script>
+    var li=document.getElementsByTagName("li");
+
+    window.onload=function(){
+
+        for(var i=0;i<li.length;i++){
+            li[i].onoff=true;
+            li[i].onclick=function(){
+
+                 //alert(00);
+                if(this.onoff){
+                this.style.background="url(images/normal.jpg)";
+                    //alert(1111);
+                    this.onoff=false;
+                    console.log(this.b1);
+                }else{
+                this.style.background="url(images/active.jpg)";
+                    //alert(000);
+                    this.onoff=true;
+                }
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>

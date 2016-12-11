@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<script>
+
+    window.onload=function(){
+
+        var li=document.getElementsByTagName("li");
+        var arr=["red","yellow","blue","pink"];
+        var str="";
+        for(var i=0;i<li.length;i++){
+            li[i].index=i;
+            li[i].style.background=arr[i%arr.length];
+            li[i].onmouseover=function(){
+                //先存起来，再赋值
+                str=this.style.background;
+                this.style.background="black";
+
+            }
+            li[i].onmouseout=function(){
+
+                this.style.background=str;
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

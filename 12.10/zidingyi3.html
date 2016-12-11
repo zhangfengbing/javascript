@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-family: "微软雅黑";
+        }
+       .list{
+            width:240px;
+           height:500px;
+           border:1px solid #333;
+           margin:50px auto;
+        }
+       .list .lis{}
+       .list h3{
+           height: 30px;
+           line-height: 30px;
+           background: #D82E2E;
+           border:1px solid red;
+           text-indent: 5px;
+           line-height: 30px;
+       }
+       .list ul{
+           display: none
+       }
+       .list ul li{
+           height: 30px;
+           background: #7D9029;
+           border-bottom:1px solid #0000CD;
+       }
+
+        .tb1{
+            display: inline-block;
+            width: 0;
+            height:0;
+            border:5px solid;
+            border-color: transparent transparent transparent palevioletred;
+            margin-right: 10px;
+        }
+        .tb2{
+            display: inline-block;
+            width: 0;
+            height:0;
+            border:5px solid;
+            border-color: yellow transparent transparent transparent ;
+            margin-right: 10px;
+        }
+        .hover{
+            backgroung:yellow;
+            color:#D82E2E;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="list">
+        <li class="lis">
+            <h3><span class="tb1"></span>我的好友</h3>
+            <ul>
+
+                <li>李敏</li>
+                <li>张浩</li>
+                <li>杨易</li>
+                <li>菲菲</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h3><span class="tb1"></span>企业好友</h3>
+            <ul >
+                <li>人人</li>
+                <li>法人</li>
+                <li>欢迎</li>
+            </ul>
+        </li>
+        <li class="lis">
+            <h3><span class="tb1"></span>黑名单</h3>
+            <ul>
+
+                <li>重新</li>
+                <li>发热</li>
+                <li>菲菲</li>
+            </ul>
+        </li>
+
+    </ul>
+<script>
+    var list=document.getElementsByClassName("list")[0];
+    var h3=list.getElementsByTagName("h3");
+    var ul=list.getElementsByTagName("ul");
+    var span=list.getElementsByTagName("span");
+
+
+    for(var i=0;i<h3.length;i++){
+        h3[i].index=i;
+        h3[i].onoff=true;
+        h3[i].onclick=function(){
+
+            if(this.onoff){
+                ul[this.index].style.display="block";
+                span[this.index].className="tb2";
+                this.onoff=false;
+            }else{
+                ul[this.index].style.display="none";
+                span[this.index].className="tb1";
+                this.onoff=true;
+            }
+
+        }
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

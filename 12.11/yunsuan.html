@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<script>
+
+    window.onload=function(){
+
+        var s=570;
+        alert(Math.floor(s/60)+"分"+s%60+"秒");
+
+
+        /////////////////
+        var li=document.getElementsByTagName("li");
+        var arr=["red","yellow","blue","pink"];
+        for(var i=0;i<li.length;i++){
+            li[i].index=i;
+            li[i].style.background=arr[i%arr.length];
+            li[i].onmouseover=function(){
+                this.style.background="black";
+            }
+            li[i].onmouseout=function(){
+
+                this.style.background=arr[this.index%arr.length];
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
